@@ -1,0 +1,113 @@
+{
+  "expo": {
+    "name": "routinat",
+    "slug": "task",
+    "version": "1.0.34",
+    "orientation": "portrait",
+    "icon": "./assets/images/logo.png",
+    "scheme": "task",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.task.app",
+      "infoPlist": {
+        "UIBackgroundModes": ["audio", "remote-notification", "fetch"],
+        "NSUserNotificationsUsageDescription": "این برنامه از نوتیفیکیشن‌ها برای یادآوری تسک‌ها استفاده می‌کند.",
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": true
+        }
+      },
+      "backgroundColor": "#E6F4FE",
+      "usesAppleSignIn": false
+    },
+
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/images/logo1.png",
+        "backgroundImage": "./assets/images/logo1.png",
+        "monochromeImage": "./assets/images/logo1.png"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "package": "com.task.app",
+      "permissions": [
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.SCHEDULE_EXACT_ALARM",
+        "android.permission.USE_EXACT_ALARM",
+        "android.permission.WAKE_LOCK",
+        "android.permission.VIBRATE",
+        "android.permission.FOREGROUND_SERVICE"
+      ],
+      "allowBackup": true,
+      "softwareKeyboardLayoutMode": "resize",
+      "backgroundColor": "#E6F4FE"
+    },
+
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/logo.png"
+    },
+
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/icon_splash.png",
+          // "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#fff"
+          // "dark": {
+          //   "backgroundColor": "#0A2540"
+          // }
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/logo.png",
+          "color": "#2196F3",
+          "sounds": [
+            "./assets/sounds/alarm1.mp3",
+            "./assets/sounds/alarm2.mp3",
+            "./assets/sounds/alarm3.mp3"
+          ],
+          "defaultChannel": "default",
+          "androidMode": "collapse",
+          "androidCollapsedTitle": "🔔 یادآوری تسک",
+          "iosSound": "alarm1.mp3"
+        }
+      ],
+      [
+        "expo-background-task",
+        {
+          "minimumInterval": 1
+        }
+      ],
+      "expo-font",
+      "expo-web-browser"
+    ],
+
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "09b171ff-69cc-425c-bc64-e559480a29e6"
+      }
+    },
+
+    "updates": {
+      "url": "https://u.expo.dev/09b171ff-69cc-425c-bc64-e559480a29e6"
+    }
+  }
+}
